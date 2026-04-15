@@ -1,0 +1,9 @@
+TeraBox-Forwarder/
+├── bot.py                # Main Handler
+├── core/
+│   ├── terabox.py        # TeraBox Link Extraction
+│   └── forwarder.py      # Multi-Channel Distribution
+├── database/
+│   └── db.py             # Trial & Category Management
+└── plugins/
+    └── settings.py       # Commands for Header/Footer/Replace
