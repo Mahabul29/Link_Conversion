@@ -1,9 +1,9 @@
-TeraBox-Forwarder/
-├── bot.py                # Main Handler
-├── core/
-│   ├── terabox.py        # TeraBox Link Extraction
-│   └── forwarder.py      # Multi-Channel Distribution
+TeraBox-Ultra/
+├── bot.py               # Main bot execution
+├── config.py            # API_ID, API_HASH, BOT_TOKEN, MONGO_URI
 ├── database/
-│   └── db.py             # Trial & Category Management
+│   └── db_handler.py    # Cleaned for Categories & Settings only
 └── plugins/
-    └── settings.py       # Commands for Header/Footer/Replace
+    ├── converter.py     # TeraBox link parsing
+    ├── forwarder.py     # Auto-forwarding logic
+    └── filters.py       # Hashtag & URL replacement logic
