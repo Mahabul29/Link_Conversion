@@ -1,6 +1,6 @@
 pyrogram
 tgcrypto
 motor
-requests
-aiohttp
+dnspython
 python-dotenv
+aiohttp
