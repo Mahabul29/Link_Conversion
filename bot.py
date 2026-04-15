@@ -1,16 +1,16 @@
-from utils.helper_func import extract_terabox_link, apply_custom_branding
+from pyrogram import Client
+from config import Config  # Importing the class we created
 
-@app.on_message(filters.text)
-async def on_new_link(client, message):
-    link = extract_terabox_link(message.text)
-    if link:
-        # Get user settings from DB
-        user_config = await db.get_user_config(message.from_user.id)
-        
-        # Process the message using our helper
-        final_output = apply_custom_branding(message.text, link, user_config)
-        
-        # Send & Forward
-        await message.reply_text(final_output)
-        # (Add your auto_forward logic here)
-        
+# Initialize the Client using variables from config.py
+app = Client(
+    "TeraBoxBot",
+    api_id=Config.API_ID,
+    api_hash=Config.API_HASH,
+    bot_token=Config.BOT_TOKEN,
+    plugins=dict(root="plugins") # This tells the bot to look in the /plugins folder for commands
+)
+
+if __name__ == "__main__":
+    print("🚀 TeraBox Ultra Bot is Starting...")
+    app.run()
+    
